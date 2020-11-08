@@ -1,60 +1,71 @@
-html{
+html {
   overflow-x: hidden;
 }
-.logo{
+
+.logo {
   font-size: 1.6rem;
 }
-.icon-secondary{
-  color: rgb(167, 164, 164);
+#menu{
+  transition: all 1s;
 }
-.banner__title{
+.banner__title {
   line-height: 1.2;
 }
 
-.h-4rem{
+.h-4rem {
   height: 4rem;
 }
-.max-height-400{
+.max-height-400 {
   max-height: 400px;
 }
-.img-banner{
+.img-banner {
   background-image: url(../images/sky.webp);
+  background-size: cover;
 }
-.h-100{
+.h-100 {
   min-height: 400px;
 }
-.font-size-2{
+.font-size-2 {
   font-size: 2rem;
 }
+.w-250px {
+  width: 250px;
+}
 
-@keyframes count-animation{
-  0%{
+@keyframes count-animation {
+  0% {
     opacity: 0;
     transform: translateY(100px);
   }
-  100%{
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
-.hidden{
+.hidden {
   opacity: 0;
 }
-.show{
+.show {
   animation: counter-animation 1.5s;
 }
-@media (min-width: 1024px) {}
+@media (min-width: 1024px) {
+}
 /* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+}
 /* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) { }
+@media (min-width: 768px) {
+
+}
 
 /* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) { 
-  .display-lg-4{
+@media (min-width: 992px) {
+  .display-lg-4 {
     font-size: 4rem;
   }
- }
+ 
+}
 
 /* Extra large devices (large desktops, 1200px and up) */
-@media (min-width: 1200px) {  }
+@media (min-width: 1200px) {
+}

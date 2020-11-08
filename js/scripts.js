@@ -35,6 +35,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
+//MENU
+$(window).scroll(function () {
+    var scroll = $(window).scrollTop();
+    const menu = $('#menu');
+    if (scroll > 10) {
+        menu.addClass("navbar-dark bg-dark py-2");
+        menu.removeClass("navbar-light bg-light py-4");
+    } else {
+        menu.addClass("navbar-light bg-light py-4");
+        menu.removeClass("navbar-dark bg-dark py-2");
+    }
+});
+
 //COUNT 
 $(function () {
     function countAnimated(id, end) {
