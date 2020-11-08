@@ -35,9 +35,32 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-//MENU
+
 $(window).scroll(function () {
     var scroll = $(window).scrollTop();
+
+    //COUNT 
+    const counters = document.querySelectorAll('.counter');
+    const speed = 200;
+
+    if (scroll > 10) {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.trunc(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    count.innerText = target;
+                }
+            }
+            updateCount();
+        });
+    }
+    //MENU
     const menu = $('#menu');
     if (scroll > 10) {
         menu.addClass("navbar-dark bg-dark py-2");
@@ -46,22 +69,4 @@ $(window).scroll(function () {
         menu.addClass("navbar-light bg-light py-4");
         menu.removeClass("navbar-dark bg-dark py-2");
     }
-});
-
-//COUNT 
-$(function () {
-    function countAnimated(id, end) {
-        let start = 0;
-        let speed = 3;
-        setInterval(() => {
-            if (start < end) {
-                start++
-                $("#count-" + id).html(start);
-            }
-        }, speed);
-    }
-    countAnimated(1, 300);
-    countAnimated(2, 250);
-    countAnimated(3, 320);
-    countAnimated(4, 423);
 });
